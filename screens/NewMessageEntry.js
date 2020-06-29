@@ -5,6 +5,7 @@ import {
   StyleSheet,
   SafeAreaView,
   Text,
+  View,
   TouchableOpacity,
   TextInput,
 } from 'react-native';
@@ -13,32 +14,42 @@ import {withFormik} from 'formik';
 const NewMessageEntry = props => {
   return (
     <SafeAreaView>
-      <TextInput
-        style={styles.input}
-        onChangeText={text => props.setFieldValue('text', text)}
-        name="text"
-        placeholder="Say something nice..."
-      />
-      <TouchableOpacity onPress={() => props.handleSubmit()}>
-        <Text style={styles.button}>Send</Text>
-      </TouchableOpacity>
+      <View style={styles.container}>
+        <TextInput
+          style={styles.input}
+          onChangeText={text => props.setFieldValue('text', text)}
+          ref={input => {
+            this.textInput = input;
+          }}
+          name="text"
+          placeholder="Say something nice..."
+        />
+        <TouchableOpacity
+          style={styles.send}
+          onPress={() => props.handleSubmit()}>
+          <Text style={styles.button}>Send</Text>
+        </TouchableOpacity>
+      </View>
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
-  header: {
-    marginBottom: 32,
-  },
   container: {
+    display: 'flex',
+    flexDirection: 'row',
+  },
+  send: {
     flex: 1,
+    height: 50,
+    justifyContent: 'center',
   },
   button: {
-    width: 200,
-    marginBottom: 16,
+    textAlign: 'center',
+    fontWeight: '600',
   },
   input: {
-    width: 300,
+    width: 330,
     height: 50,
   },
 });
@@ -46,7 +57,7 @@ const styles = StyleSheet.create({
 export default withFormik({
   mapPropsToValues: () => ({text: ''}),
   handleSubmit: (values, {props}) => {
-    console.log(values.text, props.user.name, 'from new message entry');
     props.onSend({text: values.text, name: props.user.name});
+    this.textInput.clear();
   },
 })(NewMessageEntry);

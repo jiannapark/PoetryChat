@@ -1,29 +1,36 @@
 // source: https://github.com/FullstackAcademy/PairProject.StackChat
 
 import React from 'react';
-import {View, StyleSheet, Text} from 'react-native';
+import {View, SafeAreaView, StyleSheet, Text} from 'react-native';
 
 export default function Message(props) {
   const message = props.message;
 
   return (
-    <View style={styles.message}>
-      <Text>{message.name}</Text>
-      <Text>{message.text}</Text>
-    </View>
+    <SafeAreaView style={styles.container}>
+      <View style={styles.message}>
+        <Text style={styles.name}>{message.name}</Text>
+        <Text style={styles.text}>{message.text}</Text>
+      </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  header: {
-    marginBottom: 32,
-  },
   container: {
     flex: 1,
-    backgroundColor: 'gray',
   },
   message: {
+    paddingLeft: 8,
     display: 'flex',
-    backgroundColor: 'pink',
+    flexDirection: 'row',
+    flex: 1,
+  },
+  name: {
+    fontWeight: '800',
+    marginRight: 10,
+  },
+  text: {
+    alignSelf: 'auto',
   },
 });

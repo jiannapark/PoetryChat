@@ -25,25 +25,11 @@ export function subscribeToAuthChanges(authStateChanged) {
   });
 }
 
-export function signout(onSignedOut) {
-  auth.signOut().then(() => {
-    console.log('Signed out');
-    onSignedOut();
-  });
+export function signout() {
+  auth
+    .signOut()
+    .then(() => {
+      console.log('Signed out');
+    })
+    .catch(error => console.log(error));
 }
-
-// export async function getUsers(usersRetrieved) {
-//   const userList = [];
-//   const snapshot = await firebase
-//     .firestore()
-//     .collection('users')
-//     .get();
-
-//   snapshot.forEach(doc => {
-//     console.log('snapshot', snapshot.val());
-//     console.log('doc.data', doc.data());
-//     userList.push(doc.data());
-//   });
-
-// usersRetrieved(userList);
-// }

@@ -23,6 +23,8 @@
 		D05609EE24A6AD070024842F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D05609EC24A6ACED0024842F /* GoogleService-Info.plist */; };
 		D05609EF24A6AD080024842F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D05609EC24A6ACED0024842F /* GoogleService-Info.plist */; };
 		D05609F024A6AD090024842F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D05609EC24A6ACED0024842F /* GoogleService-Info.plist */; };
+		D096BFC424A849C600ABD2E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D096BFC324A849C600ABD2E7 /* Main.storyboard */; };
+		D096BFC524A849C600ABD2E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D096BFC324A849C600ABD2E7 /* Main.storyboard */; };
 		FB4B51D56714FCBE118B733F /* libPods-PoetryChat-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE40B293FDF2E2D7F93F51CD /* libPods-PoetryChat-tvOSTests.a */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +69,7 @@
 		BE40B293FDF2E2D7F93F51CD /* libPods-PoetryChat-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PoetryChat-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C60A5EF7238EC990062BFE1C /* Pods-PoetryChat-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PoetryChat-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-PoetryChat-tvOSTests/Pods-PoetryChat-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		D05609EC24A6ACED0024842F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D096BFC324A849C600ABD2E7 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		D5891CA1A253F9194218CA3A /* Pods-PoetryChat-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PoetryChat-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-PoetryChat-tvOSTests/Pods-PoetryChat-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
@@ -136,6 +139,7 @@
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
+				D096BFC324A849C600ABD2E7 /* Main.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
 			name = PoetryChat;
@@ -300,6 +304,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = J7BH83TJH4;
 						LastSwiftMigration = 1120;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
@@ -340,6 +345,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D05609EE24A6AD070024842F /* GoogleService-Info.plist in Resources */,
+				D096BFC524A849C600ABD2E7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +354,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				D096BFC424A849C600ABD2E7 /* Main.storyboard in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				D05609ED24A6ACED0024842F /* GoogleService-Info.plist in Resources */,
 			);
@@ -688,7 +695,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = J7BH83TJH4;
 				ENABLE_BITCODE = NO;
+				GCC_NO_COMMON_BLOCKS = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"FB_SONARKIT_ENABLED=1",
@@ -715,6 +724,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = J7BH83TJH4;
+				GCC_NO_COMMON_BLOCKS = NO;
 				INFOPLIST_FILE = PoetryChat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (

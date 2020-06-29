@@ -50,9 +50,6 @@ const AuthForm = props => {
 };
 
 const styles = StyleSheet.create({
-  header: {
-    marginBottom: 32,
-  },
   container: {
     flex: 1,
     justifyContent: 'center',
@@ -110,6 +107,6 @@ export default withFormik({
   },
   handleSubmit: (values, {props}) => {
     props.authMode === 'login' ? props.login(values) : props.signup(values);
-    this.props.navigation.navigate('App');
+    props.navigation.actions.navigate('Chat');
   },
 })(AuthForm);
