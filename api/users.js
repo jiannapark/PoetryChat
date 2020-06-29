@@ -3,7 +3,7 @@ import {auth, generateUserDocument} from '../firebase';
 
 export async function login({email, password}) {
   try {
-    auth.signInWithEmailAndPassword(email, password);
+    await auth.signInWithEmailAndPassword(email, password);
   } catch (error) {
     console.log('Error Signing in with email and password', error);
   }
@@ -12,7 +12,8 @@ export async function login({email, password}) {
 export async function signup({email, password, displayName}) {
   try {
     const {user} = await auth.createUserWithEmailAndPassword(email, password);
-    generateUserDocument({...user, displayName});
+    await user.updateProfile({displayName: displayName});
+    await generateUserDocument({...user._user, displayName});
   } catch (error) {
     console.log('Error Signing up with email and password', error);
   }

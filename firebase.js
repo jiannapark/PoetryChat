@@ -13,12 +13,13 @@ export const generateUserDocument = async user => {
   const userRef = firestore.doc(`users/${user.uid}`);
   const snapshot = await userRef.get();
   if (!snapshot.exists) {
-    const {email, displayName, password} = user;
+    const {email, displayName, password, uid} = user;
     try {
       await userRef.set({
         displayName,
         email,
         password,
+        uid,
       });
     } catch (error) {
       console.log('Error creating user document', error);
@@ -27,7 +28,7 @@ export const generateUserDocument = async user => {
   return getUserDocument(user.uid);
 };
 
-const getUserDocument = async uid => {
+export const getUserDocument = async uid => {
   if (!uid) return null;
   try {
     const userDocument = await firestore.doc(`users/${uid}`).get();
@@ -106,6 +107,14 @@ const getMessageDocuments = async roomId => {
     return texts;
   } catch (error) {
     console.log('Error fetching messages', error);
+  }
+};
+
+export const addTitle = async (title, poemId) => {
+  try {
+    console.log();
+  } catch (error) {
+    console.log('Error adding title', error);
   }
 };
 

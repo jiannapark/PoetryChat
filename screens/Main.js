@@ -67,11 +67,11 @@ class Main extends React.Component {
       .orderBy('timestamp', 'desc')
       .limit(20)
       .onSnapshot(snapshot => {
-        snapshot.docs.forEach(doc => {
-          this.setState(prevState => ({
-            messages: [this.parse(doc._data), ...prevState.messages],
-          }));
-        });
+        let messages = [];
+        for (let i = 0; i < snapshot.docs.length; i++) {
+          messages.unshift(this.parse(snapshot.docs[i]._data));
+        }
+        this.setState({messages});
       });
   };
 
@@ -94,6 +94,7 @@ class Main extends React.Component {
   };
 
   onSend = message => {
+    console.log(message, 'message on send');
     const newMessage = {
       text: message.text,
       name: message.name,
@@ -114,7 +115,6 @@ class Main extends React.Component {
   }
 
   render() {
-    console.log('messages in render', this.state.messages);
     return (
       <KeyboardAwareScrollView
         resetScrollToCoords={{x: 0, y: 0}}
