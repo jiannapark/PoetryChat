@@ -1,6 +1,6 @@
 # PoetryChat
 
-PoetryChat is an iOS Chat App (WIP) that generates poems based on text messages sent.
+PoetryChat is an iOS chat app (WIP) that generates poems based on text messages sent.
 
 Built with React Native and Cloud Firestore as part of Fullstack Academy's 2004-GHP-NY solo stackathon project.
 
