@@ -9,7 +9,9 @@ export const auth = firebase.auth();
 export const firestore = firebase.firestore(app);
 
 export const generateUserDocument = async user => {
-  if (!user) return;
+  if (!user) {
+    return;
+  }
   const userRef = firestore.doc(`users/${user.uid}`);
   const snapshot = await userRef.get();
   if (!snapshot.exists) {
@@ -29,7 +31,9 @@ export const generateUserDocument = async user => {
 };
 
 export const getUserDocument = async uid => {
-  if (!uid) return null;
+  if (!uid) {
+    return null;
+  }
   try {
     const userDocument = await firestore.doc(`users/${uid}`).get();
     return {
@@ -65,19 +69,14 @@ export const generatePoem = async roomId => {
       let newWord =
         markovChain[word][Math.floor(Math.random() * markovChain[word].length)];
       word = newWord;
-      if (!word || !markovChain.hasOwnProperty(word))
+      if (!word || !markovChain.hasOwnProperty(word)) {
         word = words[Math.floor(Math.random() * words.length)];
+      }
     }
-
-    // const users = await firestore
-    //   .collection('rooms')
-    //   .doc(roomId)
-    //   .get('users');
 
     const newPoem = {
       title: '',
       body: result,
-      // collaborators: users,
     };
 
     await firestore
@@ -117,5 +116,3 @@ export const addTitle = async (title, poemId) => {
     console.log('Error adding title', error);
   }
 };
-
-// ["", "", "Cleabuttonmode always does not work", "Oh no it doesn’t wrap ", "Hi", "Hello", "Textinput clea", "Testttt", "Again", "Hellllooo", "What if text is multiple lines? What if text is mu… multiple lines? What if text is multiple lines? ", "Empty input field upon click", "Hello", "Texting", "How do I make it update realtime", "Still works?", "No double initializing firebase", "Messages not clearing ", "DefaultValue", "Value", "Let vs const", "Also does not keep consistent margin, just keeps shrinking", "Onmount", "So...", "Or use componentwillunmount", "Bye", "Cleabuttonmode always", "No?", "Have to setState with empty messages array in ML state", "Change", "Testing", "_document._data", "Doesn’t delete auto", "Ooh this.textInput.clear() works", "Doc.data", "Yo", "Ty again "]

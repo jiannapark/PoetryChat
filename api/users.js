@@ -1,4 +1,4 @@
-// source: https://www.youtube.com/watch?v=7_nO6Tok5IQ
+// source: https://github.com/JulianCurrie/CwC_React_Native/tree/firebase_basics
 import {auth, generateUserDocument} from '../firebase';
 
 export async function login({email, password}) {

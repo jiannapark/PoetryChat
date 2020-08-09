@@ -1,4 +1,4 @@
-// initial source: https://www.youtube.com/watch?v=7_nO6Tok5IQ
+// initial source: https://github.com/JulianCurrie/CwC_React_Native/tree/firebase_basics
 
 import React, {Component} from 'react';
 import AuthForm from './AuthForm';

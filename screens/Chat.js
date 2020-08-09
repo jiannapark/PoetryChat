@@ -1,4 +1,4 @@
-// // source: https://www.youtube.com/watch?v=qo7xtBCh18o
+// // source: https://snack.expo.io/@bacon/firebase-basic-chat-video-tutorial
 // // @flow
 // import React from 'react';
 // import {Button} from 'react-native';
