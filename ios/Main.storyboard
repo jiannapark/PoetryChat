@@ -152,12 +152,6 @@
                         <segue destination="1QO-bW-nUW" kind="relationship" relationship="viewControllers" id="dMS-x1-IcY"/>
                     </connections>
                 </tabBarController>
-                <view contentMode="scaleToFill" id="1ez-Iw-VRK">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                    <viewLayoutGuide key="safeArea" id="iQE-Qo-oJG"/>
-                </view>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5zQ-tE-YC5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-197" y="210"/>

@@ -1,19 +1,15 @@
-// initial source: https://www.youtube.com/watch?v=qo7xtBCh18o
+// initial source: https://snack.expo.io/@bacon/firebase-basic-chat-video-tutorial
 
 import React from 'react';
 import {
   StyleSheet,
   SafeAreaView,
-  Text,
   Button,
   View,
-  TextInput,
-  TouchableOpacity,
 } from 'react-native';
 
 import {auth, firestore, generatePoem} from '../firebase';
 import {signout} from '../api/users';
-// import {GiftedChat} from 'react-native-gifted-chat';
 import MessageList from './MessageList';
 import NewMessageEntry from './NewMessageEntry';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';

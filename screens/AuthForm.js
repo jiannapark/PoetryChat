@@ -1,4 +1,4 @@
-// initial sources: https://www.youtube.com/watch?v=7_nO6Tok5IQ && https://www.youtube.com/watch?v=eR1vP-W1emI
+// initial sources: https://www.youtube.com/watch?v=7_nO6Tok5IQ (https://github.com/JulianCurrie/CwC_React_Native/tree/firebase_basics)
 
 import React from 'react';
 import {StyleSheet, Button, Text, View, TextInput} from 'react-native';
