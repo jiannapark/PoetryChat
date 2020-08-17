@@ -1,5 +1,13 @@
 import React from 'react';
-import {StyleSheet, View, Text, TextInput, Button} from 'react-native';
+import {
+  StyleSheet,
+  SafeAreaView,
+  View,
+  Text,
+  TextInput,
+  Button,
+} from 'react-native';
+import {addTitle} from '../firebase';
 
 export default function Poem(props) {
   const [title, onChangeText] = React.useState('Untitled');
@@ -17,53 +25,50 @@ export default function Poem(props) {
   poem = poem.join(' ');
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>{poem}</Text>
-      <View style={styles.save}>
-        <Text style={styles.prompt}>Save this poem?</Text>
-        <TextInput
-          style={styles.formInput}
-          onChangeText={text => onChangeText(text)}
-          placeholder="Untitled"
-          value={title}
-        />
-        <Button
-          onPress={() => props.handleSubmit()} // create this method
-          buttonStyle={styles.button}
-          title="Save"
-        />
+    <SafeAreaView style={styles.container}>
+      <View style={styles.container}>
+        <Text style={styles.text}>{poem}</Text>
+        <View style={styles.save}>
+          <Text style={styles.prompt}>Give this poem a title:</Text>
+          <TextInput
+            style={styles.titleInput}
+            onChangeText={text => onChangeText(text)}
+            placeholder="Untitled"
+            value={title}
+          />
+          <Button onPress={addTitle} title="Save" />
+        </View>
       </View>
-    </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    marginHorizontal: 16,
   },
   text: {
     flex: 1,
-    padding: 20,
     fontSize: 18,
     lineHeight: 30,
   },
   save: {
-    paddingBottom: 50,
-    backgroundColor: 'pink',
+    marginVertical: 50,
   },
   prompt: {
-    padding: 20,
+    textAlign: 'center',
     fontSize: 16,
     color: 'gray',
+    marginVertical: 20,
   },
   titleInput: {
-    padding: 20,
-    width: '200px',
-    backgroundColor: 'pink',
-  },
-  button: {
-    backgroundColor: 'blue',
-    width: '200px',
-    marginTop: 100,
+    height: 50,
+    padding: 10,
+    marginBottom: 10,
+    fontSize: 25,
+    textAlign: 'center',
+    borderBottomColor: '#000',
+    borderBottomWidth: 1,
   },
 });
