@@ -30,7 +30,6 @@ class Main extends React.Component {
         title="Poemify"
         onPress={() => {
           generatePoem('1').then(poemInfo => {
-            console.log(poemInfo, typeof poemInfo, 'poemInfo');
             navigation.navigate('Poem', poemInfo);
           });
         }}
