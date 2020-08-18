@@ -25,17 +25,17 @@ class Main extends React.Component {
         }}
       />
     ),
-    headerRight: () => {
-      const poem = generatePoem('1');
-      return (
-        <Button
-          title="Poemify"
-          onPress={() => {
-            navigation.navigate('Poem', poem);
-          }}
-        />
-      );
-    },
+    headerRight: () => (
+      <Button
+        title="Poemify"
+        onPress={() => {
+          generatePoem('1').then(poemInfo => {
+            console.log(poemInfo, typeof poemInfo, 'poemInfo');
+            navigation.navigate('Poem', poemInfo);
+          });
+        }}
+      />
+    ),
   });
 
   parse = data => {
