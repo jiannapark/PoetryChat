@@ -46,6 +46,7 @@ export const getUserDocument = async uid => {
 };
 
 export const generatePoem = async roomId => {
+  console.log('generatePoem function initiated');
   try {
     const markovChain = {};
     const texts = await getMessageDocuments(roomId);
@@ -77,15 +78,20 @@ export const generatePoem = async roomId => {
     const newPoem = {
       title: '',
       body: result,
+      timestamp: new Date(),
     };
 
+    let poemId;
     await firestore
       .collection('rooms')
       .doc(roomId)
       .collection('poems')
-      .add(newPoem);
+      .add(newPoem)
+      .then(docRef => {
+        poemId = docRef;
+      });
 
-    return result;
+    return [poemId, result];
   } catch (error) {
     console.log('Error creating a poem--which is in itself a poem: ', error);
   }
@@ -109,9 +115,15 @@ const getMessageDocuments = async roomId => {
   }
 };
 
-export const addTitle = async (title, poemId) => {
+export const addTitle = async (title, roomId, poemId) => {
   try {
-    console.log();
+    await firestore
+      .collection('rooms')
+      .doc(roomId)
+      .collection('poems')
+      .doc(poemId)
+      .update({title})
+      .then(docRef => console.log(docRef, 'docref after addtitle'));
   } catch (error) {
     console.log('Error adding title', error);
   }

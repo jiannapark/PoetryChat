@@ -12,7 +12,7 @@ import {addTitle} from '../firebase';
 export default function Poem(props) {
   const [title, onChangeText] = React.useState('Untitled');
 
-  const text = props.navigation.state.params._55;
+  const [poemId, text] = props.navigation.state.params;
   const textArr = text.split(' ');
   let poem = [];
   for (let i = 0; i < 50; i++) {
@@ -36,7 +36,7 @@ export default function Poem(props) {
             placeholder="Untitled"
             value={title}
           />
-          <Button onPress={addTitle} title="Save" />
+          <Button onPress={() => addTitle(title, '1', poemId)} title="Save" />
         </View>
       </View>
     </SafeAreaView>
