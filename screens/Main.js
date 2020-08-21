@@ -1,5 +1,3 @@
-// initial source: https://snack.expo.io/@bacon/firebase-basic-chat-video-tutorial
-
 import React from 'react';
 import {StyleSheet, SafeAreaView, Button, View} from 'react-native';
 

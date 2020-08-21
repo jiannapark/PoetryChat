@@ -1,5 +1,3 @@
-// source: https://github.com/FullstackAcademy/PairProject.StackChat
-
 import React from 'react';
 import {View, SafeAreaView, StyleSheet, Text} from 'react-native';
 

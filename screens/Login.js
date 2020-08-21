@@ -1,5 +1,3 @@
-// initial source: https://github.com/JulianCurrie/CwC_React_Native/tree/firebase_basics
-
 import React, {Component} from 'react';
 import AuthForm from './AuthForm';
 import {login, signup, subscribeToAuthChanges} from '../api/users';
