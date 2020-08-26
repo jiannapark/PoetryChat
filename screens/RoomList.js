@@ -14,14 +14,17 @@ const DATA = [
   {
     id: '',
     title: 'Room 1',
+    users: [],
   },
   {
     id: '',
     title: 'Room 2',
+    users: [],
   },
   {
     id: '',
     title: 'Room 3',
+    users: [],
   },
 ];
 
